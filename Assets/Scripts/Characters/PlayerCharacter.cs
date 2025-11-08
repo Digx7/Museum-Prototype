@@ -7,6 +7,7 @@ public class PlayerCharacter : Character
     [SerializeField] protected CameraManager cameraManager;
 
     protected Vector2 desiredMoveDirection;
+    protected Vector2 desiredRotationDirection;
 
     // CAMERA FUNCTIONS ===========================================
 
@@ -61,6 +62,11 @@ public class PlayerCharacter : Character
     public virtual void UpdateDesiredMoveDirection(Vector2 newDesiredDirection)
     {
         desiredMoveDirection = newDesiredDirection;
+    }
+
+    public virtual void UpdateDesiredRotationDirection(Vector2 newDesiredDirection)
+    {
+        desiredRotationDirection = newDesiredDirection;
     }
 
     public virtual void Jump()

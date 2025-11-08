@@ -94,9 +94,42 @@ public class PlayerController : GameController
         }
     }
 
-    public void OnJump(InputAction.CallbackContext callbackContext)
+    public void OnAim(InputAction.CallbackContext callbackContext)
     {
         
+        // The direction the player is inputing on the keyboard or gamepad
+        Vector2 direction = callbackContext.ReadValue<Vector2>();
+        
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                possessedPlayer.UpdateDesiredRotationDirection(direction);
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                possessedPlayer.UpdateDesiredRotationDirection(direction);
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                possessedPlayer.UpdateDesiredRotationDirection(new Vector2(0,0));
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext callbackContext)
+    {
+
         // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
         switch (callbackContext.phase)
         {

@@ -9,8 +9,11 @@ public class GamePlay : GameMode
     public override void Setup()
     {
         // add code here
-        
+
         base.Setup();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
         requestLoadSaveDataChannel.Raise();
     }

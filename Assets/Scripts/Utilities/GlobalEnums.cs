@@ -10,3 +10,9 @@ public enum SceneCameraMode
 {
     FollowPlayer, Static
 }
+
+[System.Serializable]
+public enum TransformAxis
+{
+    X, Y, Z
+}
